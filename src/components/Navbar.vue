@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-toolbar color="#000" class="white--text">
-      <v-toolbar-title>MovieWorld</v-toolbar-title>
+      <v-toolbar-title><a href="/" class="white--text siteTitle"> MovieWorld</a></v-toolbar-title>
       <search-bar></search-bar>
     </v-toolbar>
   </div>
@@ -26,4 +26,7 @@ export default {
 </script>
 
 <style scoped>
+.siteTitle{
+  text-decoration: none;
+}
 </style>

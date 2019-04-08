@@ -86,7 +86,6 @@ export default {
       this.axios
         .get(this.searchUrl)
         .then(response => {
-          window.scrollTo(0,0);
           this.results = this.formatResult(response.results);
           this.totalPages = response.total_pages;
           this.totalResults = response.total_results;

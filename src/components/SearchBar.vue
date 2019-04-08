@@ -10,7 +10,7 @@
     <template v-slot:append>
       <v-fade-transition leave-absolute>
         <v-layout align-center justify-space-around>
-          <v-btn color="primary" fab small dark @click="handleSelect">
+          <v-btn color="cyan" fab small dark @click="handleSelect">
             <v-icon>search</v-icon>
           </v-btn>
         </v-layout>
@@ -26,23 +26,10 @@ export default {
     return {
       loading: true,
       results: [],
-      searchItem: "",
-      trendingMovieUrl: "/trending/movie/day"
+      searchItem: ""
     };
   },
   methods: {
-    formatResults(results) {
-      return results.map((result, index) => {
-        return { title: result.original_title };
-      });
-    },
-    loadTrendingSearch() {
-      this.axios.get(this.trendingMovieUrl).then(response => {
-        this.results = this.formatResults(response.results);
-        this.loading = false;
-      });
-    },
-
     handleSelect(item) {
       this.$router.push({
         name: "SearchResult",
@@ -50,9 +37,7 @@ export default {
       });
     }
   },
-  mounted() {
-    this.loadTrendingSearch();
-  }
+  mounted() {}
 };
 </script>
 
